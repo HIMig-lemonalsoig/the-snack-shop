@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Snack Shop Design System — Playful & Colorful
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cream / paper background */
+    --background: 42 100% 97%;
+    --foreground: 250 35% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 35% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 35% 18%;
+
+    /* Bubblegum pink (darkened from 62% → 48% lightness so white text passes WCAG AA) */
+    --primary: 340 82% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Mint green */
+    --secondary: 160 70% 70%;
+    --secondary-foreground: 250 35% 18%;
+
+    --muted: 42 40% 92%;
+    --muted-foreground: 250 15% 36%;
+
+    /* Sunshine yellow */
+    --accent: 45 100% 65%;
+    --accent-foreground: 250 35% 18%;
+
+    /* Berry / sold out */
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Fresh in-stock green */
+    --success: 145 70% 45%;
+    --success-foreground: 0 0% 100%;
+    /* Text-safe green (≥4.5:1 on white) */
+    --success-strong: 145 70% 26%;
+
+    --border: 42 30% 88%;
+    --input: 42 30% 90%;
+    --ring: 340 82% 48%;
+
+    --radius: 1.25rem;
+
+    /* Brand extras */
+    --brand-pink: 340 92% 62%;
+    --brand-yellow: 45 100% 65%;
+    --brand-mint: 160 70% 70%;
+    --brand-purple: 270 70% 65%;
+    --brand-orange: 22 95% 60%;
+
+    /* Deep enough that white text stays readable across the whole gradient */
+    --gradient-hero: linear-gradient(135deg, hsl(340 82% 46%) 0%, hsl(8 85% 50%) 55%, hsl(28 95% 48%) 100%);
+    --gradient-mint: linear-gradient(135deg, hsl(160 70% 70%) 0%, hsl(180 65% 65%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(42 100% 98%) 100%);
+
+    --shadow-pop: 0 8px 0 0 hsl(250 35% 18% / 0.08);
+    --shadow-soft: 0 12px 32px -12px hsl(340 60% 40% / 0.25);
+    --shadow-card: 0 4px 0 0 hsl(250 35% 18% / 0.06), 0 12px 24px -12px hsl(340 40% 30% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 250 35% 10%;
+    --foreground: 42 100% 97%;
+    --card: 250 30% 14%;
+    --card-foreground: 42 100% 97%;
+    --popover: 250 30% 14%;
+    --popover-foreground: 42 100% 97%;
+    --primary: 340 92% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 50% 40%;
+    --secondary-foreground: 42 100% 97%;
+    --muted: 250 25% 20%;
+    --muted-foreground: 250 15% 70%;
+    --accent: 45 100% 65%;
+    --accent-foreground: 250 35% 18%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 145 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-strong: 145 60% 62%;
+    --border: 250 25% 22%;
+    --input: 250 25% 22%;
+    --ring: 340 92% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-mint {
+    background: var(--gradient-mint);
+  }
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  .shadow-pop {
+    box-shadow: var(--shadow-pop);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .font-display {
+    font-family: 'Fredoka', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  /* Cute confetti dot pattern */
+  .bg-confetti {
+    background-image:
+      radial-gradient(circle at 20% 30%, hsl(var(--brand-pink) / 0.15) 0, transparent 8px),
+      radial-gradient(circle at 80% 20%, hsl(var(--brand-yellow) / 0.18) 0, transparent 10px),
+      radial-gradient(circle at 60% 80%, hsl(var(--brand-mint) / 0.18) 0, transparent 12px),
+      radial-gradient(circle at 30% 70%, hsl(var(--brand-purple) / 0.12) 0, transparent 9px);
+    background-size: 320px 320px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Admin palette: espresso + cream so the existing shadcn management
+   screens sit naturally inside the glass dashboard. Applied to <body>
+   while /admin is mounted so portaled dialogs/popovers match too.
+------------------------------------------------------------------- */
+@layer base {
+  body.admin-theme {
+    --background: 33 45% 95%;
+    --foreground: 18 14% 13%;
+    --card: 34 60% 97%;
+    --card-foreground: 18 14% 13%;
+    --popover: 34 60% 97%;
+    --popover-foreground: 18 14% 13%;
+    --primary: 18 17% 13%;
+    --primary-foreground: 30 100% 98%;
+    --secondary: 164 82% 22%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 30% 90%;
+    --muted-foreground: 20 12% 32%;
+    --accent: 38 100% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 9 68% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 164 82% 22%;
+    --border: 26 25% 82%;
+    --input: 26 25% 80%;
+    --ring: 176 50% 20%;
+    --radius: 1rem;
+    --gradient-hero: linear-gradient(135deg, hsl(18 17% 20%), hsl(16 40% 38%));
+    --gradient-mint: linear-gradient(135deg, hsl(164 82% 22%), hsl(170 60% 30%));
+    --shadow-card: 0 1px 2px hsl(20 30% 15% / 0.08), 0 8px 20px -12px hsl(20 30% 15% / 0.25);
+    --shadow-pop: 0 1px 2px hsl(20 30% 15% / 0.1);
+    font-family: "Manrope Variable", Manrope, system-ui, sans-serif;
+  }
+  .dark body.admin-theme {
+    --background: 18 16% 13%;
+    --foreground: 33 80% 95%;
+    --card: 18 14% 17%;
+    --card-foreground: 33 80% 95%;
+    --popover: 18 14% 17%;
+    --popover-foreground: 33 80% 95%;
+    --primary: 28 62% 87%;
+    --primary-foreground: 18 17% 12%;
+    --secondary: 164 55% 66%;
+    --secondary-foreground: 18 17% 12%;
+    --muted: 18 12% 24%;
+    --muted-foreground: 28 25% 80%;
+    --accent: 40 85% 64%;
+    --accent-foreground: 18 17% 12%;
+    --destructive: 12 100% 73%;
+    --destructive-foreground: 18 17% 12%;
+    --success: 164 55% 66%;
+    --border: 20 12% 28%;
+    --input: 20 12% 30%;
+    --ring: 22 88% 79%;
+  }
+  body.admin-theme :is(h1, h2, h3, h4, .font-display) {
+    font-family: "Manrope Variable", Manrope, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
