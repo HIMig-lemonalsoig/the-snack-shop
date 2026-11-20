@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { CATEGORIES, type SnackCategory } from "@/lib/categories";
 import { formatUSD } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { LOGO_URL } from "@/lib/assets";
 
 type FilterValue = "all" | SnackCategory;
 
@@ -72,7 +73,7 @@ const Index = () => {
       <header className="sticky top-0 z-30 border-b border-border/70 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
           <Link to="/" className="flex items-center gap-2.5 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            <img src="/logo.png" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover shadow-pop ring-2 ring-white" />
+            <img src={LOGO_URL} alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover shadow-pop ring-2 ring-white" />
             <span className="font-display text-xl font-bold tracking-tight">The Snack Shop</span>
           </Link>
           <RequestSnackForm trigger={
@@ -86,7 +87,7 @@ const Index = () => {
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-4 pt-6 md:pt-10">
         <div className="relative overflow-hidden rounded-[2rem] bg-gradient-hero px-6 py-10 text-white shadow-soft md:px-12 md:py-14">
-          <img src="/logo.png" alt="" aria-hidden className="pointer-events-none absolute -right-12 -top-12 h-52 w-52 select-none rounded-full opacity-25 md:-right-8 md:h-72 md:w-72" />
+          <img src={LOGO_URL} alt="" aria-hidden className="pointer-events-none absolute -right-12 -top-12 h-52 w-52 select-none rounded-full opacity-25 md:-right-8 md:h-72 md:w-72" />
           <p className="inline-flex items-center gap-2 rounded-full bg-black/15 px-3 py-1 text-sm font-bold backdrop-blur-sm">
             <Radio className="h-4 w-4" aria-hidden /> Live menu · updates as we sell
           </p>

@@ -28,7 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <SplashReveal />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "") || "/"}>
         <AuthProvider>
           <Suspense fallback={<PageLoader />}>
             <Routes>

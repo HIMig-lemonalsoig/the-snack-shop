@@ -33,6 +33,8 @@ const csp = (): Plugin => ({
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // GitHub Pages serves the site from /<repo>/; set BASE_PATH there. Defaults to "/" elsewhere.
+  base: process.env.BASE_PATH || "/",
   server: {
     host: "::",
     port: 8080,

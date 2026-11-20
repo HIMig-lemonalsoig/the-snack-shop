@@ -12,6 +12,7 @@ import { SnackManager } from "@/components/admin/SnackManager";
 import { SalesLog } from "@/components/admin/SalesLog";
 import { AdminManager } from "@/components/admin/AdminManager";
 import { RequestsManager } from "@/components/admin/RequestsManager";
+import { LOGO_URL } from "@/lib/assets";
 
 type ViewId = "overview" | "inventory" | "sales" | "requests" | "team";
 const VIEW_IDS: ViewId[] = ["overview", "inventory", "sales", "requests", "team"];
@@ -29,7 +30,7 @@ const readTheme = (): "light" | "dark" => {
 };
 
 const SnackLogo = () => (
-  <img src="/logo.png" alt="" width={38} height={38} style={{ width: 38, height: 38, borderRadius: "50%", objectFit: "cover" }} />
+  <img src={LOGO_URL} alt="" width={38} height={38} style={{ width: 38, height: 38, borderRadius: "50%", objectFit: "cover" }} />
 );
 
 const Admin = () => {

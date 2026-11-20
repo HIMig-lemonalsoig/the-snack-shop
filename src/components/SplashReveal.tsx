@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { GlassIconReveal } from "@/components/ui/liquid-glass-logo-reveal";
+import { LOGO_URL } from "@/lib/assets";
 
 const SEEN_KEY = "snack-splash-seen";
 /** Matches the site's cream background (--background: 42 100% 97%). */
@@ -58,7 +59,7 @@ export function SplashReveal() {
       aria-live="polite"
     >
       <GlassIconReveal
-        logo="/logo.png"
+        logo={LOGO_URL}
         label="The Snack Shop logo"
         look="light"
         background={BG}

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2, ArrowLeft, Eye, EyeOff } from "lucide-react";
+import { LOGO_URL } from "@/lib/assets";
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ const Auth = () => {
         <div className="w-full max-w-md">
           <div className="rounded-3xl border-2 border-border bg-card p-8 shadow-card">
             <div className="mb-6 text-center">
-              <img src="/logo.png" alt="" width={64} height={64} className="mx-auto h-16 w-16 rounded-full object-cover shadow-card ring-4 ring-white" />
+              <img src={LOGO_URL} alt="" width={64} height={64} className="mx-auto h-16 w-16 rounded-full object-cover shadow-card ring-4 ring-white" />
               <h1 className="mt-3 font-display text-3xl">Staff Sign In</h1>
               <p className="mt-1 text-sm text-muted-foreground">
                 Authorized staff only
